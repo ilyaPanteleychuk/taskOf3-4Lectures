@@ -11,7 +11,7 @@ import java.util.List;
 
 
 /**
- * Class provides functionality of reading
+ * Class provides functionality of reading and writing
  * XML files with Person tags
  *
  * @author Ilya Panteleychuk

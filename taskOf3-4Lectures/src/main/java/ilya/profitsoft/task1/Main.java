@@ -17,6 +17,6 @@ public class Main {
         XmlPersonParser xmlPersonParser = new XmlPersonParser();
         List<String> fileContent = fileProcessor.readFile(properties.getProperty("task1.input"));
         List<String> parsedContent = xmlPersonParser.parseXmlData(fileContent);
-        fileProcessor.writeFile(parsedContent, "task1.output");
+        fileProcessor.writeFile(parsedContent, properties.getProperty("task1.output"));
     }
 }

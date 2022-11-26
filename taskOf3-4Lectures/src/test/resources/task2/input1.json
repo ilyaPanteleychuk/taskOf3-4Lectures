@@ -1,0 +1,15 @@
+[{
+  "date_time" : "2010-05-05 15:39:03",
+  "first_name": "Legolas",
+  "last_name": "Fatherless",
+  "type": "SPEEDING",
+  "fine_amount": 340.00
+  },
+  {
+    "date_time" : "2010-05-05 15:39:03",
+    "first_name": "Aragorn",
+    "last_name": "Son of Aratorn",
+    "type": "SPEEDING",
+    "fine_amount": 500.00
+  }]
+

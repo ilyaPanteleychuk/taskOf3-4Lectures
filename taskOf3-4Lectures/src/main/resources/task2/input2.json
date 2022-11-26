@@ -1,0 +1,42 @@
+[{
+  "date_time" : "2010-05-05 15:39:03",
+  "first_name": "Dominik",
+  "last_name": "Torenta",
+  "type": "DRUNK DRIVING",
+  "fine_amount": 2500.00
+},
+  {
+    "date_time" : "2010-05-05 15:39:03",
+    "first_name": "Letti",
+    "last_name": "Ortis",
+    "type": "DRUNK DRIVING",
+    "fine_amount": 2500242.00
+  },
+  {
+    "date_time" : "2010-05-05 15:39:03",
+    "first_name": "Decard",
+    "last_name": "Shou",
+    "type": "DRUNK DRIVING",
+    "fine_amount": 2500.00
+  },
+  {
+    "date_time" : "2010-05-05 15:39:03",
+    "first_name": "Luk",
+    "last_name": "Hobs",
+    "type": "DRUNK DRIVING",
+    "fine_amount": 2500.00
+  },
+  {
+    "date_time" : "2010-05-05 15:39:03",
+    "first_name": "Brayan",
+    "last_name": "O`koner",
+    "type": "DRUNK DRIVING",
+    "fine_amount": 2500.00
+  },
+  {
+    "date_time" : "2010-05-05 15:39:03",
+    "first_name": "Han",
+    "last_name": "LU",
+    "type": "DRUNK DRIVING",
+    "fine_amount": 2500.00
+  }]

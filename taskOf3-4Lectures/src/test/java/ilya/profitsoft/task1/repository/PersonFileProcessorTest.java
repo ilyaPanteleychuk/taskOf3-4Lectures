@@ -24,8 +24,8 @@ class PersonFileProcessorTest {
         List<String> expected = new ArrayList<>();
         expected.add("<persons>\n" +
                 "    <person name=\"Іван\" surname=\"Котляревський\" birthDate=\"09.09.1769\" />");
-        expected.add("    <person surname=\"Шевченко\" name=\"Тарас\" birthDate=\"09.03.1814\" />");
-        expected.add("</persons>");
+        expected.add("\n" + "    <person surname=\"Шевченко\" name=\"Тарас\" birthDate=\"09.03.1814\" />");
+        expected.add("\n" + "</persons>");
         assertEquals(expected, actual);
     }
     
@@ -39,10 +39,10 @@ class PersonFileProcessorTest {
                 "            birthData=\"27.08.1856\"\n" +
                 "            name = \"Іван\"\n" +
                 "            surname = \"Франко\" />");
-        expected.add("    <person name=\"Леся\"\n" +
+        expected.add("\n" + "    <person name=\"Леся\"\n" +
                 "            surname=\"Українка\"\n" +
                 "            birthData=\"13.02.1871\" />");
-        expected.add("</persons>");
+        expected.add("\n" + "</persons>");
         assertEquals(expected, actual);
     }
     
@@ -56,11 +56,22 @@ class PersonFileProcessorTest {
                 "            birthData=\"27.08.1856\"\n" +
                 "            name = \"Іван\"\n" +
                 "            surname = \"Франко\" />");
-        expected.add("    <person name=\"Леся\"\n" +
+        expected.add("\n" + "    <person name=\"Леся\"\n" +
                 "            surname=\"Українка\"\n" +
                 "\n" +
                 "\n" +
                 "            birthData=\"13.02.1871\" />");
+        expected.add("\n" + "</persons>");
+        assertEquals(expected, actual);
+    }
+    
+    @Test
+    void readFile_shouldReturnRightFormattedList_whenElementsAreInSingleLine() {
+        List<String> actual = fileProcessor
+                .readFile("elementsAreInSingleLine.xml");
+        List<String> expected = new ArrayList<>();
+        expected.add("<persons><person name=\"Іван\" surname=\"Котляревський\" birthDate=\"09.09.1769\" />");
+        expected.add("<person surname=\"Шевченко\" name=\"Тарас\" birthDate=\"09.03.1814\" />");
         expected.add("</persons>");
         assertEquals(expected, actual);
     }

@@ -8,6 +8,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 /**
@@ -22,24 +24,28 @@ public class PersonFileProcessor {
         if(fileName == null){
             throw new NullPointerException("File can not be null");
         }
-        List<String> fileContent = new ArrayList<>();
+        List<String> output = new ArrayList<>();
         ClassLoader classLoader = getClass().getClassLoader();
         try (InputStream inputStream = classLoader.getResourceAsStream(fileName);
              InputStreamReader streamReader = new InputStreamReader(inputStream);
              BufferedReader bufferedReader = new BufferedReader(streamReader)
         ) {
-            String line;
-            while ((line = bufferedReader.readLine()) != null) {
-                //read full person element till />
-                while (!line.endsWith("/>") && !(line.equals("</persons>"))) {
-                    line = line.concat("\n" + bufferedReader.readLine());
-                }
-                fileContent.add(line);
+            //regex to find full person element till /> or if it`s end - find closed root tag
+            String regex = "((.*?)<person(.*?)/>|.*</persons>)";
+            String currentLine;
+            String fileContent = "";
+            Pattern fullPersonPattern = Pattern.compile(regex, Pattern.DOTALL);
+            while ((currentLine = bufferedReader.readLine()) != null) {
+                fileContent = fileContent.concat(currentLine + "\n");
+            }
+            Matcher fullPersonMatcher = fullPersonPattern.matcher(fileContent);
+            while (fullPersonMatcher.find()) {
+                output.add(fullPersonMatcher.group());
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        return fileContent;
+        return output;
     }
     
     public void writeFile(List<String> input, String fileName) {
@@ -47,7 +53,7 @@ public class PersonFileProcessor {
              BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)
         ) {
             for (String line : input) {
-                bufferedWriter.write(line + System.lineSeparator());
+                bufferedWriter.write(line);
             }
         } catch (IOException e) {
             throw new RuntimeException(e);

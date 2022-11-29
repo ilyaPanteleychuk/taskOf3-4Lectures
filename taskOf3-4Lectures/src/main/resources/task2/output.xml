@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <fines>
     <fine>
+        <title>UNFASTENED SEATBELT</title>
+        <amount>5.000008E8</amount>
+    </fine>
+    <fine>
         <title>DRUNK DRIVING</title>
         <amount>2512742.0</amount>
     </fine>
     <fine>
         <title>SPEEDING</title>
         <amount>112840.0</amount>
-    </fine>
-    <fine>
-        <title>UNFASTENED SEATBELT</title>
-        <amount>1300.0</amount>
     </fine>
 </fines>

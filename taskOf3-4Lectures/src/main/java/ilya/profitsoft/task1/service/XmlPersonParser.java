@@ -36,6 +36,8 @@ public class XmlPersonParser {
                         .replaceAll(surnameRegex, "")
                         .replace(name, fullName);
                 parsedData.add(replacedString);
+            }else{
+                parsedData.add(currentLine);
             }
         }
         return parsedData;

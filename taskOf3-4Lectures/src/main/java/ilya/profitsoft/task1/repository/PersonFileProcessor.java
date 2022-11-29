@@ -36,11 +36,12 @@ public class PersonFileProcessor {
             String fileContent = "";
             Pattern fullPersonPattern = Pattern.compile(regex, Pattern.DOTALL);
             while ((currentLine = bufferedReader.readLine()) != null) {
-                fileContent = fileContent.concat(currentLine + "\n");
-            }
-            Matcher fullPersonMatcher = fullPersonPattern.matcher(fileContent);
-            while (fullPersonMatcher.find()) {
-                output.add(fullPersonMatcher.group());
+                fileContent = fileContent.concat(  currentLine + "\n");
+                Matcher fullPersonMatcher = fullPersonPattern.matcher(fileContent);
+                while (fullPersonMatcher.find()){
+                    output.add(fullPersonMatcher.group());
+                    fileContent = "\n";
+                }
             }
         } catch (IOException e) {
             throw new RuntimeException(e);

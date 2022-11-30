@@ -56,9 +56,9 @@ public class PersonFileProcessor {
             throw new NullPointerException();
         }
         //regex to find attribute surname in the line
-        String surnameRegex = "\\s+surname\\s*=\\s*\"(\\S*)\"";
+        String surnameRegex = "\\s+surname\\s*=\\s*\"(\\W*)\"";
         //regex to find attribute name in the line
-        String nameRegex = "\\s+name\\s*=\\s*\"(\\S*)\"";
+        String nameRegex = "\\s+name\\s*=\\s*\"(\\W*)\"";
         Pattern surnamePattern = Pattern.compile(surnameRegex);
         Pattern namePattern = Pattern.compile(nameRegex);
         Matcher surnameMatcher = surnamePattern.matcher(currentLine);

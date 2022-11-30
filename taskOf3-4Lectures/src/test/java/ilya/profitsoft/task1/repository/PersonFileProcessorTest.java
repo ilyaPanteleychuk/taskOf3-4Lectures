@@ -39,6 +39,19 @@ class PersonFileProcessorTest {
     }
     
     @Test
+    void formatXmlData_shouldConcatSurnameTagWithNameSavingFormatting_whenElementsHaveSpaces() {
+        String expected = "<person\n" +
+                "            birthData=\"27.08.1856\"\n" +
+                "            name = \"Ів  ан Франк о\" />";
+        String notParsedLine = "<person\n" +
+                "            birthData=\"27.08.1856\"\n" +
+                "            name = \"Ів  ан\"\n" +
+                "            surname = \"Франк о\" />";
+        String actual = fileProcessor.formatXmlData(notParsedLine);
+        assertEquals(expected, actual);
+    }
+    
+    @Test
     void formatXmlData_shouldThrowNullPointerException_whenInputIsNull() {
         assertThrows(NullPointerException.class, () ->
                 fileProcessor.formatXmlData(null));

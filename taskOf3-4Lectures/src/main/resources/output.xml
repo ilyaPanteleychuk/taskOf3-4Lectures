@@ -1,9 +1,5 @@
-<persons><person
-        birthData
-                =
-                "27.08.1856"
-        name =
-                "Іван Франко" />
-    <person name=
-                    "Леся Українка"
-            birthData="13.02.1871" /></persons>
+<persons>
+    <person name="Ів  ан Котлярев        ський" birthDate="09.09.1769" />
+    <person
+            name=" Тар  ас Шевченко" birthDate="09.03.1814" />
+</persons>

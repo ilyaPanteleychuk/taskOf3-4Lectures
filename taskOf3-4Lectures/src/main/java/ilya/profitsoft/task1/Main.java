@@ -2,7 +2,6 @@ package ilya.profitsoft.task1;
 
 import ilya.profitsoft.task1.repository.PersonFileProcessor;
 import ilya.profitsoft.task2.utils.PropertyReader;
-import java.util.List;
 import java.util.Properties;
 
 

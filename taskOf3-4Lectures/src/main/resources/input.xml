@@ -1,14 +1,6 @@
-<persons><person
-        birthData
-                =
-                "27.08.1856"
-        name =
-                "Іван"
-
-        surname =
-
-                "Франко" />
-    <person name=
-                    "Леся" surname=
-            "Українка"
-            birthData="13.02.1871" /></persons>
+<persons>
+    <person name="Ів  ан"
+                 surname="Котлярев        ський" birthDate="09.09.1769" />
+    <person surname="Шевченко"
+            name=" Тар  ас" birthDate="09.03.1814" />
+</persons>
